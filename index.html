@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <title>致敬科比</title>
+    <link rel="stylesheet" href="css/mobile-reset.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/base.js"></script>
+    <script src="js/zepto.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+             <div class="swiper-slide">
+                <img src="images/1.jpg" alt=""></div>
+            <div class="swiper-slide kb1">
+                <p class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+                    <img src="images/2-1.png" alt="">
+                </p>
+                <img src="images/2.jpg" alt=""></div> 
+             <div class="swiper-slide kb2">
+                <p class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+                    <img src="images/3-1.png" alt="">
+                </p>
+                <img src="images/3.jpg" alt=""></div>
+             <div class="swiper-slide kb3">
+                <p class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+                    <img src="images/4-1.png" alt="">
+                </p>
+                <img src="images/4.jpg" alt=""></div>
+            <div class="swiper-slide kb4">
+                <p class="ani p1" swiper-animate-effect="fadeInLeft" swiper-animate-duration="2s" swiper-animate-delay="0.5s">
+                    <img src="images/5-1.png" alt="">
+                </p>
+                 <p class="ani p2" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.5s" swiper-animate-delay="1.2s">
+                    <img src="images/5-2.png" alt="">
+                </p>
+                 <p class="ani p3" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+                    <img src="images/5-3.png" alt="">
+                </p>
+                <img src="images/5.jpg" alt=""></div>
+             <div class="swiper-slide kb5">
+                 <p class="ani" swiper-animate-effect="rotateInDownRight" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+                    <img src="images/6-1.png" alt="">
+                </p>
+                <img src="images/6.jpg" alt=""></div>
+            <div class="swiper-slide kb6">
+                 <p class="ani" swiper-animate-effect="flipInY" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s">
+                    <img src="images/7-1.png" alt="">
+                </p>
+                <img src="images/7.jpg" alt=""></div>
+            <div class="swiper-slide kb7">
+                 <p class="ani" swiper-animate-effect="flipInY" swiper-animate-duration="0.6s" swiper-animate-delay="0.3s">
+                    <img src="images/8-1.png" alt="">
+                </p>
+                <img src="images/8.jpg" alt=""></div>
+            <div class="swiper-slide kb8">
+                 <p class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0.3s">
+                    <img src="images/9-1.png" alt="">
+                </p>
+                <img src="images/9.jpg" alt=""></div>
+            <div class="swiper-slide kb9">
+                 <p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+                    <img src="images/10-1.png" alt="">
+                </p>
+                <img src="images/10.jpg" alt=""></div>
+            <div class="swiper-slide">
+                <img src="images/11.jpg" alt=""></div>
+        </div>
+    </div>
+<!-- 导航等组件可以放在container之外 -->
+<script src="js/swiper.js"></script>
+ <script>
+        var swiperSlide = $(".swiper-slide");
+        var mySwiper = new Swiper('.swiper-container', {
+            //是否修改手势，pc下这属性可以要，移动端不需要
+            grabCursor: true,
+            //上一页、下一页
+            // nextButton: '.swiper-button-next',
+            // prevButton: '.swiper-button-prev',
+            //轮播图小圆点的容器
+            // pagination: '.swiper-paginationabc',
+            //竖向切换
+            direction: 'vertical',
+            loop:true,
+            //插件初始化时，第一页需要特殊处理的话，需要在此定义
+            onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+                swiperAnimateCache(swiper); //隐藏动画元素 
+                swiperAnimate(swiper); //初始化完成开始动画
+            }, 
+            //切换完成之后触发
+            onSlideChangeEnd: function(swiper){ 
+                swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+                // $('#list li').removeClass('cur').find('.tips').hide();
+            } 
+        });
+    </script>
+</html>
